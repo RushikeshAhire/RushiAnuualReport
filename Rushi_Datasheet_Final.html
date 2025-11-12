@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rushikesh Ahire | ESDS Annual Day</title>
+  <style>
+    /* ======= BASIC PAGE STYLES ======= */
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f1f5f9;
+      overflow-x: hidden;
+      text-align: center;
+      position: relative;
+    }
+
+    /* ======= MOVING CLOUD BACKGROUND ======= */
+    body::before {
+      content: "";
+      background: url("D:/Rushi Ahire Datasheet/ESDS1.png") repeat-x;
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      x-index: 1;
+      animation: clouds 60s linear infinite;
+      background-size: contain;
+    }
+
+    @keyframes clouds {
+      from { background-position: 0 0; }
+      to { background-position: -2000px 0; }
+    }
+
+    header {
+      padding: 60px 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ======= MOTION PHOTO ======= */
+    .photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #38bdf8;
+      margin-bottom: 20px;
+      box-shadow: 0 0 30px #38bdf8;
+      opacity: 0;
+      transform: scale(0.5);
+      animation: photoAppear 1.5s ease-out forwards;
+    }
+
+    @keyframes photoAppear {
+      0% { opacity: 0; transform: scale(0.5) translateY(50px); }
+      100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ======= TEXT ANIMATIONS ======= */
+    h4, h1, h3, h5, h6, h7 {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    h5 {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+
+    h4 {
+      font-size: 1.5rem;
+      color: #38bdf8;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 2s;
+    }
+
+
+    h1 {
+      font-size: 2rem;
+      color: #38bdf8;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.6s;
+    }
+
+   h2 {
+      font-size: 2.5rem;
+      color: #53f2bf;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 1.6s;
+    }
+
+    h3 {
+      font-weight: 400;
+      color: #cbd5e1;
+      animation: fadeUp 3s ease forwards;
+      animation-delay: 2.2s;
+    }
+
+   
+
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ======= BUTTONS ======= */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .button-container button {
+      border: none;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      box-shadow: 0 0 15px #00000055;
+    }
+
+    .button-container button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #ffffff44;
+    }
+
+    @keyframes buttonPop {
+      0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Color-coded buttons */
+    #btn1 { background: linear-gradient(45deg, #27547A, #4CA5E6); }
+    #btn2 { background: linear-gradient(45deg, #27547A, #4CA5E6); }
+    #btn3 { background: linear-gradient(45deg, #27547A, #4CA5E6); }
+    #btn4 { background: linear-gradient(45deg, #27547A, #4CA5E6); }
+    #btn5 { background: linear-gradient(45deg, #27547A, #4CA5E6); }
+    
+
+    /* ======= SECTION STYLING ======= */
+    section {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeIn 0s ease;
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 1000px;
+      box-shadow: 0 0 25px #00000060;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      background: #1e293b;
+      border-radius: 10px;
+      overflow: hidden;
+      color: #f1f5f9;
+    }
+
+    th, td {
+      padding: 15px;
+      border-bottom: 1px solid #334155;
+    }
+
+    th {
+      background: #0ea5e9;
+      color: #0f172a;
+    }
+
+    td button {
+      background: #38bdf8;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+/* ======= Achievements STYLES ======= */
+
+ * {
+  box-sizing: border-box;
+}
+
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+div.gallery-item {
+  margin: 5px;
+  border: 1px solid #ccc;
+  width: calc(50% - 50px);
+}
+
+div.gallery-item:hover {
+  border: 1px solid #777;
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+div.gallery-item div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  div.gallery-item {
+    width: calc(100% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.gallery-item {
+    width: calc(100% - 20px);
+  }
+}
+
+/* ======= Work Highlights======= */
+
+
+	ul {
+  list-style: square inside url("sqpurple.gif");
+     }
+
+
+
+    /* ======= GRID STYLES ======= */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .grid-item {
+      background: #1e293b;
+      border-radius: 15px;
+      padding: 20px;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px #0ea5e940;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #38bdf880;
+    }
+
+    .grid-item img {
+      width: 60px;
+      height: 60px;
+    }
+	
+    /* ======= APPRECIATION IMAGE ======= */
+    .appreciation-img {
+      width: 250px;
+      border-radius: 10px;
+      margin-top: 10px;
+      box-shadow: 0 0 15px #38bdf860;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Annual Report 2025</h1>
+    <img src="D:/Rushi Ahire Datasheet/Rushi1.jpg" alt="Rushikesh Ahire" class="photo" />
+    <h4>Rushikesh Sunil Ahire<br><h9 style="color:#C1CAD6; font-family:calibri light; font-size:70%;" > A passionate and results-driven Cloud Solution Architect with a focus on delivering innovative cloud solutions, driving client success, and achieving business growth. Over the past year, I’ve contributed to key cloud transformation projects, strengthened client relationships across regions, and consistently delivered excellence through teamwork, learning, and execution.</h9></h4>
+   
+    <h3 style="color:#5BB6EB;">Solution Architect | Presales Department </h3>
+  </header>
+
+  <!-- ======= BUTTONS ======= -->
+  <div class="button-container">
+    <button id="btn1" onclick="showSection('projects')">Projects</button>
+    <button id="btn2" onclick="showSection('Certifications & Training')">Certifications & Training</button>
+    <button id="btn3" onclick="showSection('extracurricular')">Extracurricular</button>
+    <button id="btn4" onclick="showSection('Achievements')">Achievements</button>
+    <button id="btn5" onclick="showSection('Work Highlights')">Work Highlights</button>
+    </div>
+
+  <!-- ======= PROJECTS SECTION ======= -->
+  <section id="projects">
+    <h8>In the past year, I successfully managed over <h9 style="color:Tomato;">140+ opportunities</h9>, driving revenue of more than <h9 style="color:Tomato;">₹10 crore </h9> through seamless front-end and back-end execution. This achievement includes major projects with KDCCB, Kerala Finance Corporation, and Chikhli Urban Co-op Bank, among others. Explore the complete list of our successful projects below.</h8>
+
+    <h2 style="color:#7CCF59; font-family:courier; font-size:200%;" >Total Revenue- ₹10CR</h2>
+    <table>
+      <tr>
+        <th>Project Name</th>
+        <th>Scope</th>
+        <th>Status</th>
+        <th>Project Value (INR)</th>
+      </tr>
+      <tr>
+  <td>Braithwaite And Company Limited</td>
+  <td>DC, DR and NDR hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 3,481,488</td>
+</tr>
+<tr>
+  <td>LOGIC Luminar</td>
+  <td>Grey-BOX Security Audit of WEB Application</td>
+  <td><button>WON</button></td>
+  <td>₹ 180,000</td>
+</tr>
+<tr>
+  <td>MUDRA</td>
+  <td>Procurement & implementation of Kaspersky Extended Detection and Response XDRI Agents</td>
+  <td><button>WON</button></td>
+  <td>₹ 396,480</td>
+</tr>
+<tr>
+  <td>MSRDCL</td>
+  <td>DC Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 159,972</td>
+</tr>
+<tr>
+  <td>Voximplant, INC</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 803,968</td>
+</tr>
+<tr>
+  <td>Tech Mahindra Additional</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 100,920</td>
+</tr>
+<tr>
+  <td>Tech Mahindra Additional</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 998,856</td>
+</tr>
+<tr>
+  <td>SRIT - Enagarpalika Additional</td>
+  <td>DR Site Additional vm</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,315,824</td>
+</tr>
+<tr>
+  <td>SRIT - Enagarpalika Bonton</td>
+  <td>Additional Storage</td>
+  <td><button>WON</button></td>
+  <td>₹ 32,160</td>
+</tr>
+<tr>
+  <td>SRIT</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,409,256</td>
+</tr>
+<tr>
+  <td>Auric- MTNL</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 557,040</td>
+</tr>
+<tr>
+  <td>Auric</td>
+  <td>DC site Hosting - Additional</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,817,424</td>
+</tr>
+<tr>
+  <td>MHBSHSE</td>
+  <td>DC site Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,946,959</td>
+</tr>
+<tr>
+  <td>SIDBI</td>
+  <td>DR site Hosting - Additional</td>
+  <td><button>WON</button></td>
+  <td>₹ 749,952</td>
+</tr>
+<tr>
+  <td>HESCOM</td>
+  <td>DC and DR Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 17,279,008</td>
+</tr>
+<tr>
+  <td>Intervue Labs</td>
+  <td>VAPT</td>
+  <td><button>WON</button></td>
+  <td>₹ 130,000</td>
+</tr>
+<tr>
+  <td>Jalana Peoples Co-op Bank</td>
+  <td>CBS Hosting in ESDS DC + DR Hosting</td>
+  <td><button>WON</button></td>
+  <td>₹ 3,186,000</td>
+</tr>
+<tr>
+  <td>MSRDC- Versova Bandra Sea Link LTD</td>
+  <td>Cloud Hosting renewal</td>
+  <td><button>WON</button></td>
+  <td>₹ 865,202</td>
+</tr>
+<tr>
+  <td>NABARD Consultancy Services pvt. Ltd.</td>
+  <td>Hosting of NABCONS Website</td>
+  <td><button>WON</button></td>
+  <td>₹ 429,317</td>
+</tr>
+<tr>
+  <td>PMPL</td>
+  <td>DC Site - Additional</td>
+  <td><button>WON</button></td>
+  <td>₹ 566,160</td>
+</tr>
+<tr>
+  <td>Amrut- Vijay Joshi</td>
+  <td>SOC Services</td>
+  <td><button>WON</button></td>
+  <td>₹ 229,320</td>
+</tr>
+<tr>
+  <td>Amrut- Vijay Joshi</td>
+  <td>Additional Storage</td>
+  <td><button>WON</button></td>
+  <td>₹ 13,885</td>
+</tr>
+<tr>
+  <td>Amrut- Vijay Joshi</td>
+  <td>DC site Hosting - Additional</td>
+  <td><button>WON</button></td>
+  <td>₹ 318,420</td>
+</tr>
+<tr>
+  <td>Shri Arihant Co-op Bank</td>
+  <td>VAPT Audit</td>
+  <td><button>WON</button></td>
+  <td>₹ 349,000</td>
+</tr>
+<tr>
+  <td>Chikhali Urban Co-op Bank ltd.</td>
+  <td>DC DR Hosting CSOC, Connectivity</td>
+  <td><button>WON</button></td>
+  <td>₹ 54,909,000</td>
+</tr>
+<tr>
+  <td>Nashik Road Deolali Vyapari Bank ltd.</td>
+  <td>AD Servers</td>
+  <td><button>WON</button></td>
+  <td>₹ 2,107,574</td>
+</tr>
+<tr>
+  <td>Akhand Anand</td>
+  <td>Additional Servers</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,274,640</td>
+</tr>
+<tr>
+  <td>Chikhali Urban Co-op Bank_colocation</td>
+  <td>Colo</td>
+  <td><button>WON</button></td>
+  <td>₹ 72,000</td>
+</tr>
+<tr>
+  <td>Shri Chatrapati Rajarshi Shahu Urban Co-op Bank ltd Beed</td>
+  <td>Replication link</td>
+  <td><button>WON</button></td>
+  <td>₹ 24,000</td>
+</tr>
+<tr>
+  <td>Citizen Co-op Bank</td>
+  <td>Backup Server</td>
+  <td><button>WON</button></td>
+  <td>₹ 1,105,004</td>
+</tr>
+<tr>
+  <td>Dr. Annasaheb Choughule Urban Co-op Bank</td>
+  <td>DC DR Hosting, colocation</td>
+  <td><button>WON</button></td>
+  <td>₹ 2,160,565</td>
+</tr>
+<tr>
+  <td>Indore Paraspar Bank ltd.</td>
+  <td>WAF</td>
+  <td><button>WON</button></td>
+  <td>₹ 252,000</td>
+</tr>
+<tr>
+  <td></td>
+  <td>PIM/PAM</td>
+  <td><button>WON</button></td>
+  <td>₹ 203,688</td>
+</tr>
+<tr>
+  <td>MITL AUIC</td>
+  <td>DC Site</td>
+  <td><button>WON</button></td>
+  <td>₹ 819,120</td>
+</tr>
+<tr>
+  <td>AP Raja Rajeshwari</td>
+  <td>Additional Storage</td>
+  <td><button>WON</button></td>
+  <td>₹ 21,240</td>
+</tr>
+
+    </table>
+  </section>
+
+  <!-- ======= Certification SECTION ======= -->
+
+  <section id="Certifications & Training">
+    <h2>Certifications & Training</h2>
+    <div class="grid">
+      <div class="grid-item">
+        <h5><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt=""></h5>
+        <h5>Oracle Cloud Certification</h5>
+      </div>
+      <div class="grid-item">
+        <h5><img src="D:/Rushi Ahire Datasheet/AWS Associate photo.jpg" alt=""></h5>
+        <h5>Enrolled in AWS Associate Solutions Architect</h5>
+      </div>
+      <div class="grid-item">
+        <h5><img src="D:/Rushi Ahire Datasheet/Redhat.png" alt=""></h5>
+        <h5>Red Hat SA Global Certification</h5>
+      </div>
+     
+     <div class="grid-item">
+        <h5><img src="D:/Rushi Ahire Datasheet/CC.png" alt=""></h5>
+        <h5>ISC2 - Security Principles</h5>
+      </div>
+
+
+
+    </div>
+  </section>
+
+  <!-- ======= EXTRACURRICULAR SECTION ======= -->
+  <section id="extracurricular">
+    <h2>Extracurricular Activities</h2>
+    <div class="grid">
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/block.png">Volleyball</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/struggle.png"><br>Tug of War</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/paint.png">Painting</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/reunion.png">Friendship Day</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/fathers-day.png">Father’s Day</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/planet.png">Environment Day (Reel)</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/meditation.png"><br>Yoga Day</h5></div>
+      <div class="grid-item"><h5><img src="D:/Rushi Ahire Datasheet/fair.png"><br>Fun Fair</h5></div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ======= APPRECIATIONS SECTION ======= -->
+  <section id="Achievements">
+    <h2>Achievements</h2>
+    
+    <div class="gallery">
+
+<div class="gallery-item">
+  <a target="_blank" href="D:/Rushi Ahire Datasheet/A1.png">
+    <img src="D:/Rushi Ahire Datasheet/A1.png" alt="Cinque Terre" width="600" height="400" style="border-top-width: 50px; padding-top: 200px;">
+  </a>
+  <div class="desc">Appreciation Mail</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="D:/Rushi Ahire Datasheet/a2.jpg">
+    <img src="D:/Rushi Ahire Datasheet/a2.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">NCBS and FCBA 2025 Award Function.</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="D:/Rushi Ahire Datasheet/a3.jpg">
+    <img src="D:/Rushi Ahire Datasheet/a3.jpg" alt="Northern Lights" width="600" height="400" style="border-top-width: 50px; padding-top: 200px;">
+  </a>
+  <div class="desc">KDCCB Winning Celebration.</div>
+</div>
+
+<div class="gallery-item">
+  <a target="_blank" href="D:/Rushi Ahire Datasheet/a4.jpg">
+    <img src="D:/Rushi Ahire Datasheet/a4.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">NCBS and FCBA 2025 Award Function.</div>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======= Work Highlights SECTION ======= -->
+  <section id="Work Highlights">
+    <h2>Work Highlights</h2>
+    <div class="">
+      <div class="grid-item"><h9 style="color:#5BB6EB; font-family:calibri light; font-size:120%; text-align: left;"><img src="D:/Rushi Ahire Datasheet/working.png"><br><br> My Work Highlights (Dec 2024 – Nov 2025)
+Over the past year, I’ve been actively contributing to multiple cloud transformation initiatives and client engagements across regions.
+<ul>
+<li>Delivered 10+ client presentations, both online and offline, showcasing our cloud and security capabilities.</li>
+<li>Worked extensively on both Private and Public Cloud environments, driving end-to-end solution designs.</li>
+<li>Visited 25+ clients across different locations to understand requirements, design solutions, and build strong relationships.</li>
+<li>Continuously learning new technologies and implementing them in daily tasks to improve efficiency and innovation.</li>
+<li>Supported large-scale projects with Sandesh and Akash, including KDCCB, Chikhli Urban, Goa Urban, and Shahu Bank.</li>
+<li>Contributed to achieving a total TCV of ₹10 Cr, through consistent effort and teamwork.</li>
+<li>Actively involved in pre-sales discussions, proposal building, and client solutioning to ensure successful project outcomes.</li>
+<li>Always striving to learn, lead, and deliver excellence in every engagement.</li></h9></div>
+     
+
+    </div>
+  </section>
+
+
+
+
+
+  <footer>
+    © 2025 | Designed by Rushikesh Nikam | ESDS Annual Day Presentation
+  </footer>
+
+ <script>
+    // Sequential button animation after intro
+    window.onload = () => {
+      setTimeout(() => { document.getElementById("btn1").style.animation = "buttonPop 0.8s ease forwards"; }, 2800);
+      setTimeout(() => { document.getElementById("btn2").style.animation = "buttonPop 0.8s ease forwards"; }, 3300);
+      setTimeout(() => { document.getElementById("btn3").style.animation = "buttonPop 0.8s ease forwards"; }, 3800);
+      setTimeout(() => { document.getElementById("btn4").style.animation = "buttonPop 0.8s ease forwards"; }, 4300);
+      setTimeout(() => { document.getElementById("btn5").style.animation = "buttonPop 0.8s ease forwards"; }, 4800);
+    };
+
+    // THIS IS THE UPDATED FUNCTION
+    function showSection(id) {
+      // 1. Hide all other sections
+      document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+      
+      // 2. Get the one you want to show
+      const targetSection = document.getElementById(id);
+
+      // 3. Show it (this starts your CSS 'fadeIn' animation)
+      targetSection.style.display = "block";
+
+      // 4. Smoothly scroll down to the top of that section
+      // We wait 50 milliseconds just to make sure it's visible before scrolling
+      setTimeout(() => {
+        targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50); 
+    }
+  </script>
+
+</body>
+</html>
